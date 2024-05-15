@@ -173,7 +173,7 @@ const dataKeys = [
 
 const Table = () => {
   return (
-    <div className="px-20">
+    <div className="px-20 w-full">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-white text-5xl leading-[59px] font-clashGrotesk">
           LLM Leaderboard
@@ -187,38 +187,39 @@ const Table = () => {
         test LLMs on a large number of different evaluation tasks. The higher
         the score, the better the LLM.
       </p>
-
-      <table>
-        <thead>
-          <tr>
-            {tableHeaders.map((header, index) => (
-              <th
-                key={index}
-                className={`text-white text-xl leading-6 ${header.className}`}
-              >
-                {header.label}
-              </th>
-            ))}
-          </tr>
-          {tableData.map((row, index) => (
-            <tr key={index}>
-              <td>
-                {row.change === "up" ? (
-                  <img src="/images/up.svg" alt="up" />
-                ) : row.change === "down" ? (
-                  <img src="/images/down.svg" alt="down" />
-                ) : null}
-              </td>
-
-              {dataKeys.map((key) => (
-                <td className="text-white text-xl leading-6" key={key}>
-                  {row[key as keyof typeof row]}
-                </td>
+      <div className="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              {tableHeaders.map((header, index) => (
+                <th
+                  key={index}
+                  className={`text-white text-xl leading-6 ${header.className}`}
+                >
+                  {header.label}
+                </th>
               ))}
             </tr>
-          ))}
-        </thead>
-      </table>
+            {tableData.map((row, index) => (
+              <tr key={index}>
+                <td>
+                  {row.change === "up" ? (
+                    <img src="/images/up.svg" alt="up" />
+                  ) : row.change === "down" ? (
+                    <img src="/images/down.svg" alt="down" />
+                  ) : null}
+                </td>
+
+                {dataKeys.map((key) => (
+                  <td className="text-white text-xl leading-6" key={key}>
+                    {row[key as keyof typeof row]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </thead>
+        </table>
+      </div>
     </div>
   );
 };

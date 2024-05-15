@@ -37,16 +37,16 @@ const App = () => {
       <main className={`${inter.variable} ${clashGrotesk.variable} relative`}>
         <div className="min-h-[100vh] relative max-w-[1920px] w-full mx-auto">
           <Hero />
-          <BackgroundImage />
-          <Comet />
-          <About />
-          <Table />
+          {/* <BackgroundImage /> */}
+          {/* <Comet /> */}
+          {/* <About /> */}
+          {/* <Table /> */}
         </div>
 
         {/* <ScrollLine /> */}
         <div className="h-[1200px]"></div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </SmoothScrollComponent>
   );
 };
