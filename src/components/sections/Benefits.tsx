@@ -51,7 +51,7 @@ const Benefits = () => {
             className="text-white w-full bg__gradient py-5 lg:py-8 rounded-full"
           >
             <div className="flex flex-col items-center">
-              <h4 className="text-4xl md:text-3xl xl:text-[64px] font-bold mb-2 lg:mb-5 xl:leading-[79px] font-clashGrotesk">
+              <h4 className="text-4xl md:text-3xl lg:text-5xl min-[1420px]:text-[64px] font-bold mb-2 lg:mb-5 xl:leading-[79px] font-clashGrotesk">
                 {benefit.title}
               </h4>
               <p className="text-lg lg:text-[24px] lg:leading-[29px] font-inter text-center">
