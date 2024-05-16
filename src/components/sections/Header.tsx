@@ -17,7 +17,7 @@ const Header = () => {
       style={{ top }}
       className="flex relative items-center justify-center mt-8 font-inter gap-5 md:gap-12 mb-24 md:mb-[200px]"
     >
-      <p className="text-white text-sm md:text-lg leading-[22px]">
+      <p className="text-white text-sm md:text-lg leading-[22px] transition-[background,background-clip] duration-500 hover:text-transparent hover:bg-clip-text hover:bg-text-gradient cursor-pointer">
         LLM Leaderboard
       </p>
       <Button>Buy Spice AI</Button>

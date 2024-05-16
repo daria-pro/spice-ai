@@ -14,13 +14,24 @@ const Button = ({
   className = "",
   size = "sm",
 }: Props) => {
-  const classes = `text-white border-gradient before:rounded-[91px] font-inter ${
+  const classes = `text-white border-gradient before:rounded-[91px] font-inter relative  ${
     size === "sm"
       ? "px-6 py-2.5 md:pb-4 md:pt-3.5 text-sm md:text-lg leading-[22px] font-normal"
       : "px-12 py-4 lg:py-6 font-medium"
   } ${className}`;
 
-  const renderButton = () => <button className={classes}>{children}</button>;
+  const renderButton = () => (
+    <button className={`${classes} button`}>
+      <span className="text-transparent">{children}</span>
+      <span
+        className={`absolute inset-0  -translate-y-1/2 z-10 ${
+          size === "sm" ? "top-1/2" : "top-[51%] lg:top-[54%]"
+        }`}
+      >
+        {children}
+      </span>
+    </button>
+  );
 
   const renderLink = () => (
     <Link href={href} className={classes}>
@@ -28,7 +39,7 @@ const Button = ({
     </Link>
   );
 
-  return href ? renderLink() : renderButton();
+  return <div className="">{href ? renderLink() : renderButton()}</div>;
 };
 
 export default Button;
