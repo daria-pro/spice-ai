@@ -5,22 +5,33 @@ import { useMediaQuery } from "react-responsive";
 
 const Title = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 1023px)" });
   const element = useRef(null);
   const { scrollYProgress } = useScroll({
     target: element,
     offset: isMobile
+      ? ["start 170px", "start 90px"]
+      : isTablet
       ? ["start 170px", "start 90px"]
       : ["start 290px", "start 90px"],
   });
   const fontSize = useTransform(
     scrollYProgress,
     [0, 0.3],
-    isMobile ? ["44px", "42px"] : ["128px", "126px"]
+    isMobile
+      ? ["44px", "42px"]
+      : isTablet
+      ? ["84px", "82px"]
+      : ["128px", "126px"]
   );
   const lineHeight = useTransform(
     scrollYProgress,
     [0, 0.3],
-    isMobile ? ["54px", "52px"] : ["157px", "155px"]
+    isMobile
+      ? ["54px", "52px"]
+      : isTablet
+      ? ["94px", "92px"]
+      : ["157px", "155px"]
   );
   const background = useTransform(
     scrollYProgress,

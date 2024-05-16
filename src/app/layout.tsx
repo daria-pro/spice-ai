@@ -15,11 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <body
-        // style={{ background: "linear-gradient(180deg, #000000 36.4%, #191E2A 100%)" }}
-        //  className={inter.className}
-        className="overflow-x-hidden"
+      //  className={inter.className}
       >
         {children}
       </body>

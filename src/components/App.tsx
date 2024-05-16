@@ -1,14 +1,15 @@
-import BackgroundImage from "@/components/BackgroundImage";
-import Comet from "@/components/Comet";
-import Footer from "@/components/Footer";
+import BackgroundImage from "@/components/sections/BackgroundImage";
+import Comet from "@/components/sections/Comet";
+import Footer from "@/components/sections/Footer";
 
 import SmoothScrollComponent from "@/components/helpers/SmothScroll";
-import ScrollLine from "@/components/ScrollLine";
+import ScrollLine from "@/components/sections/ScrollLine";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
-import Hero from "./Hero";
-import About from "./About";
-import Table from "./Table";
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Table from "./sections/Table";
+import Join from "./sections/Join";
 
 const clashGrotesk = localFont({
   src: [
@@ -35,18 +36,19 @@ const App = () => {
   return (
     <SmoothScrollComponent>
       <main className={`${inter.variable} ${clashGrotesk.variable} relative`}>
-        <div className="min-h-[100vh] relative max-w-[1920px] w-full mx-auto">
+        <div className="min-h-[100vh] relative max-w-[1920px] w-full mx-auto overflow-hidden">
           <Hero />
-          {/* <BackgroundImage /> */}
-          {/* <Comet /> */}
-          {/* <About /> */}
-          {/* <Table /> */}
+          <BackgroundImage />
+          <Comet />
+          <About />
+          <Table />
         </div>
-
-        {/* <ScrollLine /> */}
-        <div className="h-[1200px]"></div>
+        <div className="h-[400px]"></div>
+        <ScrollLine />
+        <div className="h-[600px]"></div>
+        <Join />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </SmoothScrollComponent>
   );
 };
